@@ -28,6 +28,9 @@
   },
   "devDependencies": {
     "element-ui": "^2.15.14",
+    "@vue/component-compiler-utils": "^2.6.0",
+    "@vitejs/plugin-vue2": "^2.2.0",
+    "sass": "^1.69.5",
     "vite": "^5.2.11",
     "vue": "^2.7.15",
     "vue-router": "^3.6.5",

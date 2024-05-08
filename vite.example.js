@@ -1,4 +1,5 @@
 import VitePluginMdDocs from "./src/index.js";
+import Vue from "@vitejs/plugin-vue2";
 import { resolve } from "path";
 export default () => {
   return {
@@ -12,6 +13,7 @@ export default () => {
     },
     plugins: [
       VitePluginMdDocs(),
+      Vue({ include: [/(\.vue)$/, /\.md$/] }),
     ],
     resolve: {
       alias: {
