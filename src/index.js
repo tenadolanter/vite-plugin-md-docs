@@ -11,7 +11,7 @@ export default function VitePluginMdDocs(options) {
   } else if (options?.frame === "react") {
     loader = reactLoader;
   } else {
-    loader = mdLoader;
+    loader = vueLoader;
   }
   return {
     name: "vite-plugin-md-docs",
