@@ -1,0 +1,27 @@
+{
+  "name": "vite-plugin-md-docs",
+  "version": "0.0.0",
+  "description": "根据markdown生成组件文档",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tenadolanter/vite-plugin-md-docs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tenadolanter/vite-plugin-md-docs/issues"
+  },
+  "homepage": "https://github.com/tenadolanter/vite-plugin-md-docs#readme",
+  "dependencies": {
+    "highlight.js": "^11.9.0",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^8.6.7",
+    "markdown-it-chain": "^1.3.0",
+    "markdown-it-container": "^4.0.0",
+    "transliteration": "^2.3.5"
+  }
+}
