@@ -1,17 +1,14 @@
-import Filter from  "./filter.js";
-import mdLoader from "./markdown/index.js";
-import vueLoader from "./vue/index.js";
-import reactLoader from "./react/index.js";
-export default function VitePluginMdDocs(options){
+import Filter from "./filter.js";
+const mdLoader = require("./markdown/index.js");
+const vueLoader = require("./vue/index.js");
+const reactLoader = require("./react/index.js");
+export default function VitePluginMdDocs(options) {
   let config;
   let loader;
-  const filter = Filter(
-    options?.include || /\.md$/,
-    options?.exclude || null
-  );
-  if(options?.frame === "vue") {
+  const filter = Filter(options?.include || /\.md$/, options?.exclude || null);
+  if (options?.frame === "vue") {
     loader = vueLoader;
-  } else if(options?.frame === "react"){
+  } else if (options?.frame === "react") {
     loader = reactLoader;
   } else {
     loader = mdLoader;
@@ -22,16 +19,16 @@ export default function VitePluginMdDocs(options){
     configResolved(c) {
       config = { ...c };
     },
-    transform(content, file){
+    transform(content, file) {
       if (!filter(file)) return;
       return loader(content, options);
     },
-    handleHotUpdate(ctx){
+    handleHotUpdate(ctx) {
       if (!filter(ctx.file)) return;
       const read = ctx.read;
       ctx.read = async () => {
         return loader(await read(), options);
       };
     },
-  }
+  };
 }
