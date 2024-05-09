@@ -1,5 +1,4 @@
 import Filter from "./filter.js";
-const mdLoader = require("./markdown/index.js");
 const vueLoader = require("./vue/index.js");
 const reactLoader = require("./react/index.js");
 export default function VitePluginMdDocs(options) {
