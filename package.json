@@ -2,7 +2,18 @@
   "name": "vite-plugin-md-docs",
   "version": "0.0.0",
   "description": "根据markdown生成组件文档",
-  "main": "index.js",
+  "main": "lib/index.umd.js",
+  "module": "lib/index.mjs",
+  "exports": {
+    ".": {
+      "require": "./lib/index.umd.js",
+      "import": "./lib/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "start": "VITE_CLI_TYPE=example vite",
     "build:example": "VITE_CLI_TYPE=example vite build",
