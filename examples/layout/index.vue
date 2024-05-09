@@ -1,14 +1,16 @@
 <template>
   <div class="page-container">
-    <!-- <layout-header></layout-header> -->
+    <layout-header></layout-header>
     <div class="page-content">
-      <!-- <el-scrollbar class="page-content-nav">
+      <el-scrollbar class="page-content-nav">
         <div class="side-nav">
           <el-menu :router="true">
-            <el-menu-item index="/page-start"> 开始 </el-menu-item>
+            <el-menu-item index="/page-start"> 插件实现 </el-menu-item>
+            <el-menu-item index="/vue-start"> 如何在vue中使用 </el-menu-item>
+            <el-menu-item index="/react-start"> 如何在react中使用 </el-menu-item>
           </el-menu>
         </div>
-      </el-scrollbar> -->
+      </el-scrollbar>
       <el-scrollbar class="page-content-main">
         <div id="main">
           <router-view class="content"></router-view>
