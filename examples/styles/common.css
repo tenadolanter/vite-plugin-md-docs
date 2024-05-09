@@ -62,3 +62,14 @@ button, input, select, textarea {
   line-height: inherit;
   color: inherit;
 }
+
+
+.highlight pre {
+    margin: 0;
+}
+.highlight code.hljs {
+  margin: 0;
+  border: none;
+  max-height: none;
+  border-radius: 0;
+}

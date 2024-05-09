@@ -16,7 +16,7 @@ module.exports = (options) => {
             <pre><code class="html">${md.utils.escapeHtml(token.content)}</code></pre>
           </div>
         </div>
-        <div class="demo-block-control" style="text-aligin: center;">
+        <div style="text-align: center;padding:10px 0;cursor: pointer;">
           <span>显示隐藏代码</span>
         </div>
         `;
