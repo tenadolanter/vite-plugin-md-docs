@@ -10,9 +10,16 @@ module.exports = (options) => {
         prevToken.nesting === 1 &&
         prevToken.info.trim().match(/^demo\s*(.*)$/);
       if (token.info === "html" && isInDemoContainer) {
-        return `<template slot="highlight"><pre v-pre><code class="html">${md.utils.escapeHtml(
-          token.content
-        )}</code></pre></template>`;
+        return `
+        <div class="meta">
+          <div class="highlight">
+            <pre><code class="html">${md.utils.escapeHtml(token.content)}</code></pre>
+          </div>
+        </div>
+        <div class="demo-block-control" style="text-aligin: center;">
+          <span>显示隐藏代码</span>
+        </div>
+        `;
       }
       return defaultRender(tokens, idx, options, env, self);
     };
