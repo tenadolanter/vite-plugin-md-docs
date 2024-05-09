@@ -24,7 +24,7 @@ module.exports = (content, options) => {
     const html = stripTemplate(commentContent);
     const script = stripScript(commentContent);
     let demoComponentContent = genInlineComponentText(html, script);
-    const demoComponentName = `element-demo${id}`;
+    const demoComponentName = `vue-code-demo${id}`;
     output.push(`<${demoComponentName} />`);
     componenetsString += `${JSON.stringify(
       demoComponentName

@@ -4,7 +4,7 @@
  */
 const MarkdownContainer = require("markdown-it-container");
 module.exports = (options) => {
-  const { startTag, endTag, componentName } = options || {};
+  const { startTag, endTag } = options || {};
   const md = (markdown) => {
     markdown.use(MarkdownContainer, "demo", {
       validate(params) {
