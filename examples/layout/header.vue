@@ -2,7 +2,7 @@
   <div class="layout-header">
     <div class="layout-header__container">
       <div class="left-wrap">
-        <div class="name">组件库说明</div>
+        <div class="name">插件使用文档</div>
       </div>
     </div>
   </div>
