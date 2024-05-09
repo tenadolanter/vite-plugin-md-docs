@@ -18,7 +18,9 @@ module.exports = (options) => {
             tokens[idx + 1].type === "fence" ? tokens[idx + 1].content : "";
           return `<div class="demo-block" style="border: solid 1px #ebebeb;border-radius: 3px;transition: .2s;margin-bottom: 24px;">
           ${description ? `<div>${markdown.render(description)}</div>` : ""}
-          ${startTag} ${content}${endTag}
+          <div class="source">
+            ${startTag} ${content}${endTag}
+          </div>
           `;
         }
         return `</div>`;

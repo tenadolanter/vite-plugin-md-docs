@@ -73,3 +73,6 @@ button, input, select, textarea {
   max-height: none;
   border-radius: 0;
 }
+.demo-block .source {
+  padding: 24px;
+}

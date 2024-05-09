@@ -25,7 +25,7 @@ module.exports = (content, options) => {
     const script = stripScript(commentContent);
     let demoComponentContent = genInlineComponentText(html, script);
     const demoComponentName = `element-demo${id}`;
-    output.push(`<template slot="source"><${demoComponentName} /></template>`);
+    output.push(`<${demoComponentName} />`);
     componenetsString += `${JSON.stringify(
       demoComponentName
     )}: ${demoComponentContent},`;
