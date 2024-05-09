@@ -12,7 +12,7 @@ export default () => {
       target: "es2015",
     },
     plugins: [
-      VitePluginMdDocs(),
+      VitePluginMdDocs({ frame: "vue" }),
       Vue({ include: [/(\.vue)$/, /\.md$/] }),
     ],
     resolve: {
