@@ -24,8 +24,8 @@ module.exports = (options) => {
         return `</${componentName}>`;
       },
     });
-    markdown.use(mdContainer, "tip");
-    markdown.use(mdContainer, "warning");
+    markdown.use(MarkdownContainer, "tip");
+    markdown.use(MarkdownContainer, "warning");
   };
   return md;
 };

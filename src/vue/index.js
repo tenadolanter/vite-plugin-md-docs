@@ -7,6 +7,6 @@ module.exports = (source, options) => {
     ...options,
   }
   const content = mdLoader(source, _options);
-  const render = vueLoader(content, _options)
-  return render
+  const render = vueLoader(content, _options);
+  return render;
 }

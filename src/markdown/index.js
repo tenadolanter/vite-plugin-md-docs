@@ -5,23 +5,20 @@
  * transliteration 将一种语言转换为另外一种形式，如中文转拼音
  *
 */
-
-const MarkDownChain = require("markdown-it-chain");
-const MarkDownAnchor = require("markdown-it-anchor");
+const MarkdownChain = require("markdown-it-chain");
+const MarkdownAnchor = require("markdown-it-anchor");
 const Slugify = require("transliteration").slugify;
-
-const getContainer = require("./container.js");
-const getFence = require("./fence.js");
+const MarkdownContainer = require("./container.js");
+const MarkdownFence = require("./fence.js");
 module.exports = (source, options) => {
-  const container = getContainer(options);
-  const MdChain = new MarkDownChain();
-  MdChain.options
+  const chain = new MarkdownChain();
+  chain.options
     // 告诉模板引擎按照html解析
     .html(true)
     .end()
     // 转换标题
     .plugin("anchor")
-    .use(MarkDownAnchor, [
+    .use(MarkdownAnchor, [
       {
         level: 2,
         slugify: Slugify,
@@ -31,11 +28,10 @@ module.exports = (source, options) => {
     .end()
     // 创建自定义容器
     .plugin("containers")
-    .use(container)
+    .use(MarkdownContainer(options))
     .end();
-  const md = MdChain.toMd();
-  const overWriteFence = getFence(options);
-  overWriteFence(md);
+  const md = chain.toMd();
+  MarkdownFence(options)(md);
   const render = md.render(source);
   return render;
 };
