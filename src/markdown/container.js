@@ -1,8 +1,12 @@
-const mdContainer = require("markdown-it-container");
+/**
+ * markdown-it-container用于在md文档中创建自定义容器
+ *
+*/
+const MarkdownContainer = require("markdown-it-container");
 module.exports = (options) => {
   const { startTag, endTag, componentName } = options || {};
   const md = (markdown) => {
-    markdown.use(mdContainer, "demo", {
+    markdown.use(MarkdownContainer, "demo", {
       validate(params) {
         return params.trim().match(/^demo\s*(.*)$/);
       },
