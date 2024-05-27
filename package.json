@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-md-docs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "根据markdown生成组件文档",
   "main": "lib/index.umd.js",
   "module": "lib/index.mjs",
